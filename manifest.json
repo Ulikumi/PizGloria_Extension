@@ -1,0 +1,31 @@
+{
+  "name": "PizGloria Extension",
+  "description": "Generates Data For Hourly Voltage Drop & Stratergic",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "icons": {
+      "16": "./images/pizGloriaLogo.png"
+  },
+  "content_scripts": [{
+    "matches": [ "https://pizgloria.americantower.com/*"],
+    "js": ["content-script.js"]
+}],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+      "default_icon": {
+          "16": "./images/pizGloriaLogo.png"
+      }
+  },
+  "permissions": [
+      "storage",
+      "activeTab",
+      "tabs",
+      "scripting"
+  ],
+  "host_permissions": [
+      "https://pizgloria.americantower.com/*"
+  ]
+}
